@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17">
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-classes-java.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-generated-sources-annotationProcessor-java.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-generated-sources-headers-java.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-reports-tests.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-test-results.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task-build-tmp.main" target="11" />
+      <module name="Simple_Banking_System.Simple_Banking_System-task.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Comments-The_forgotten_comments.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Comments-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Constructor-Geometric_cube.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Constructor-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Defining_classes-Inner_boxes.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Defining_classes-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Errors_in_programs-Fix_compile-time_errors.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Errors_in_programs-Fix_the_program.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Errors_in_programs-Print_the_age.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Errors_in_programs-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Errors_in_programs-What's_wrong.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Increment_and_decrement-Decrement_all.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Increment_and_decrement-Increasing_a_variable_by_one.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Increment_and_decrement-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Increment_and_decrement-What_is_the_result.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Increment_and_decrement-What_is_the_result__1_.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Instance_methods-Circle.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Instance_methods-Counter.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Instance_methods-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Introduction_to_Java-Hello.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Introduction_to_Java-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Introduction_to_Java-WORA.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Printing_data-First,_second,_third.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Printing_data-Theory.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Switch_statement-Direction.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Switch_statement-Removing_breaks.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Switch_statement-Test_learners.main" target="11" />
+      <module name="Simple_Banking_System.Topics-Switch_statement-Theory.main" target="11" />
+      <module name="Simple_Banking_System.util.main" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
