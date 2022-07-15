@@ -1,17 +1,6 @@
 type: edu
 custom_name: stage3
 files:
-- name: src/banking/Main.java
-  visible: true
-  text: |-
-    package banking;
-
-    public class Main {
-        public static void main(String[] args) {
-            System.out.println("Hello, world!");
-        }
-    }
-  learner_created: false
 - name: test/SimpleBankSystemTest.java
   visible: false
   text: |
@@ -489,6 +478,12 @@ files:
         }
     }
   learner_created: false
+- name: card.s3db
+  visible: true
+  learner_created: true
+- name: tempDatabase.s3db
+  visible: true
+  learner_created: true
 - name: src/banking/Account.java
   visible: true
   text: |
@@ -573,6 +568,20 @@ files:
         }
     }
   learner_created: true
+- name: src/banking/Main.java
+  visible: true
+  text: |-
+    package banking;
+
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello, world!");
+        }
+    }
+  learner_created: false
 feedback_link: https://hyperskill.org/learn/step/8427#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 15 Jul 2022 18:03:36 UTC
 record: -1
