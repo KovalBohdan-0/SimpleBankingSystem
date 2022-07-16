@@ -62,6 +62,35 @@ public class Account {
         return String.format("%04d", random.nextInt(9999));
     }
 
+    public static boolean validateNumber (long cardNumber) {
+        StringBuilder numbers = new StringBuilder(Long.toString(cardNumber));
+        int[] cardNumbers = new int[numbers.length()];
+
+        int sum = 0;
+
+        for (int i = 0; i < cardNumbers.length; i++) {
+            cardNumbers[i] = numbers.charAt(i) - '0';
+
+            if (i != cardNumbers.length - 1) {
+                if ((i + 1) % 2 != 0) {
+                    cardNumbers[i] *= 2;
+
+                    if (cardNumbers[i] > 9) {
+                        cardNumbers[i] -= 9;
+                    }
+                }
+                sum += cardNumbers[i];
+            }
+
+        }
+
+        if ((cardNumbers[cardNumbers.length - 1]+sum) % 10 == 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     public long getCardNumber() {
         return cardNumber;
     }

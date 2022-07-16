@@ -9,23 +9,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Account> accounts = new ArrayList<>();
 
         //Connecting to database
-        String url = "jdbc:sqlite:" + args[1];
+        DBC dbc = new DBC(args);
 
-        SQLiteDataSource dataSource = new SQLiteDataSource();
-        dataSource.setUrl(url);
-        try {
-            Connection connection = dataSource.getConnection();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS card(id INTEGER,number TEXT,pin TEXT,balance INTEGER DEFAULT 0)");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         label:
         while (true) {
             System.out.println("1. Create an account\n" +
@@ -38,14 +30,10 @@ public class Main {
                 case "1": {
                     Account account = new Account();
                     accounts.add(account);
-
                     try {
-                        Connection connection = dataSource.getConnection();
-                        Statement statement = connection.createStatement();
-                        statement.executeUpdate(String.format("INSERT INTO card(number, pin, balance) VALUES (%d, %s, %d)"
-                                , account.getCardNumber(), account.getPin(), account.getBalance()));
+                        dbc.addAccount(account);
                     } catch (SQLException e) {
-                        throw new RuntimeException(e);
+                     //   throw new RuntimeException(e);
                     }
 
                     System.out.println("Your card has been created");
@@ -59,29 +47,39 @@ public class Main {
                     System.out.println("Enter your PIN:");
                     String pin = scanner.nextLine();
 
-                    Account loggedAccount = null;
-
-                    for (Account account : accounts) {
-                        if (account.getCardNumber() == cardNumber && account.getPin().equals(pin)) {
-                            loggedAccount = account;
-                        }
-                    }
-
-                    if (loggedAccount != null) {
+                    if (dbc.login(cardNumber, pin)) {
                         System.out.println("You have successfully logged in!");
 
                         label1:
                         while (true) {
                             System.out.println("1. Balance\n" +
-                                    "2. Log out\n" +
+                                    "2. Add income\n" +
+                                    "3. Do transfer\n" +
+                                    "4. Close account\n" +
+                                    "5. Log out\n" +
                                     "0. Exit");
                             String accountInput = scanner.nextLine();
 
                             switch (accountInput) {
                                 case "1":
-                                    System.out.println("Balance: " + loggedAccount.getBalance());
+                                    System.out.println("Balance: " + dbc.getBalance(cardNumber));
                                     break;
                                 case "2":
+                                    System.out.println("Enter income:");
+                                    int balance = Integer.parseInt(scanner.nextLine());
+                                    dbc.addBalance(balance, cardNumber);
+                                    System.out.println("Income was added!");
+                                    break;
+                                case "3":
+                                    System.out.println("Transfer\n" +
+                                            "Enter card number:");
+                                    dbc.transfer(cardNumber, Long.parseLong(scanner.nextLine()));
+                                    break;
+                                case "4":
+                                    dbc.deleteCard(cardNumber);
+                                    System.out.println("The account has been closed!");
+                                    break label1;
+                                case "5":
                                     System.out.println("You have successfully logged out!");
                                     break label1;
                                 case "0":
@@ -97,6 +95,8 @@ public class Main {
                 }
                 case "0":
                     System.out.println("Bye!");
+                    dbc.closeConnection();
+                    scanner.close();
                     break label;
             }
         }
